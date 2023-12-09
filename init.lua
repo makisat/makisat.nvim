@@ -8,7 +8,7 @@ vim.api.nvim_set_keymap('n', '<leader>s', '<cmd>vsp<CR><c-w><c-w><cmd>Explore<cr
 vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>bw<CR>', { noremap = true, silent = true })
 
 -- toggleterm
-vim.api.nvim_set_keymap('t', '<esc>', '<c-\\><c-n>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('t', '<esc>', '<c-\\><c-n>', { noremap = true, silent = true })
 
 require("lazy_init")
 
@@ -23,3 +23,4 @@ require("plugins.comment")
 require("plugins.treesitter")
 require("plugins.toggleterm")
 require("plugins.telescope")
+require("plugins.surround")

@@ -1,7 +1,7 @@
 -- relative line number
 vim.opt.relativenumber = true
 vim.opt.number = true
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 vim.opt.guicursor = ""
 
 vim.opt.scrolloff = 6

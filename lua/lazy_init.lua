@@ -15,6 +15,14 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	-- colorscheme
 	{"catppuccin/nvim", name = "catppuccin", priority = 1000},
+	-- "morhetz/gruvbox",
+	{ "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
 	-- lsp
 	"neovim/nvim-lspconfig",
 	"williamboman/mason.nvim",

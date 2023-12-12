@@ -17,7 +17,7 @@ cmp.setup({
 	}),
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
-		{ name = "lausnip" },
+		{ name = "luasnip" },
 	},
 	{
 		{ name = "buffer" },
@@ -41,3 +41,4 @@ require("lspconfig")["tsserver"].setup{
 require("lspconfig")["eslint"].setup{
 	capabilities = capabilities
 }
+

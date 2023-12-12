@@ -10,6 +10,7 @@ if not vim.loop.fs_stat(lazypath) then
 		lazypath,
 	})
 end
+
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
@@ -32,6 +33,17 @@ require("lazy").setup({
 	'hrsh7th/cmp-nvim-lsp',
 	-- snippet
 	"L3MON4D3/LuaSnip",
+	{
+		"L3MON4D3/LuaSnip",
+		dependencies = {
+			"rafamadriz/friendly-snippets",
+			"saadparwaiz1/cmp_luasnip",
+		},
+		-- follow latest release.
+		version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+		-- install jsregexp (optional!).
+		build = "make install_jsregexp"
+	},
 	-- indent visibility
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	-- comment
@@ -48,3 +60,4 @@ require("lazy").setup({
 	-- vim-surround
 	{ "kylechui/nvim-surround", version = "*", event = "VeryLazy" },
 }, opts)
+

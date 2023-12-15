@@ -8,6 +8,9 @@ vim.api.nvim_set_keymap('n', '<C-s>', '<cmd>vsp<CR><c-w><c-w><cmd>Explore<cr>', 
 vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>bw<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader><leader>r', '<cmd>source ~/.config/nvim/init.lua<CR>', { noremap = true, silent = true })
 
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+
 -- toggleterm
 -- vim.api.nvim_set_keymap('t', '<esc>', '<c-\\><c-n>', { noremap = true, silent = true })
 

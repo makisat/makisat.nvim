@@ -30,7 +30,7 @@ require("lspconfig")["rust_analyzer"].setup{
 	capabilities = capabilities
 }
 
-require("lspconfig")["lua_ls"].setup{
+require("lspconfig")["gopls"].setup{
 	capabilities = capabilities
 }
 
@@ -38,7 +38,23 @@ require("lspconfig")["tsserver"].setup{
 	capabilities = capabilities
 }
 
-require("lspconfig")["eslint"].setup{
+require("lspconfig")["lua_ls"].setup{
 	capabilities = capabilities
 }
+
+require("lspconfig")["jedi_language_server"].setup{
+	capabilities = capabilities
+}
+
+require("lspconfig")["clangd"].setup{
+	capabilities = capabilities
+}
+
+-- require("lspconfig")["pyright"].setup{
+-- 	capabilities = capabilities
+-- }
+
+-- require("lspconfig")["eslint"].setup{
+-- 	capabilities = capabilities
+-- }
 

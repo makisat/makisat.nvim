@@ -47,6 +47,7 @@ ls.add_snippets("c", {
 	})
 })
 
+ls.filetype_extend("typescriptreact", { "html" })
+ls.filetype_extend("javascriptreact", { "html" })
 require("luasnip.loaders.from_vscode").lazy_load()
-
 

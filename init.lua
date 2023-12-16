@@ -11,6 +11,16 @@ vim.api.nvim_set_keymap('n', '<leader><leader>r', '<cmd>source ~/.config/nvim/in
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 
+-- Create an autocommand group
+vim.cmd("augroup MyGroup")
+-- Clear any existing autocommands in the group
+vim.cmd("autocmd!")
+-- Add a new autocommand that runs your function on buffer change
+vim.cmd("autocmd BufEnter * lua check_filetype()")
+-- End the group
+vim.cmd("augroup END")
+
+
 -- toggleterm
 -- vim.api.nvim_set_keymap('t', '<esc>', '<c-\\><c-n>', { noremap = true, silent = true })
 

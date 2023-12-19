@@ -49,7 +49,18 @@ require("lazy").setup({
 	-- comment
 	{ "numToStr/Comment.nvim", opts = {}, lazy = false, },
 	-- auto pair
-	{ "jiangmiao/auto-pairs" },
+	-- { "jiangmiao/auto-pairs" },
+	-- auto pair alt
+	{
+		"kylechui/nvim-surround",
+		version = "*", -- Use for stability; omit to use `main` branch for the latest features
+		event = "VeryLazy",
+		config = function()
+			require("nvim-surround").setup({
+				-- Configuration here, or leave empty to use defaults
+			})
+		end
+	},
 	-- treesitter
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	"nvim-treesitter/nvim-treesitter-refactor",
@@ -59,5 +70,7 @@ require("lazy").setup({
 	{ 'nvim-telescope/telescope.nvim', tag = '0.1.5', dependencies = { 'nvim-lua/plenary.nvim' } },
 	-- vim-surround
 	{ "kylechui/nvim-surround", version = "*", event = "VeryLazy" },
+	{ "vim-airline/vim-airline", dependencies = { "vim-airline/vim-airline-themes" } },
+	{ "folke/trouble.nvim", dependencies = { "nvim-tree/nvim-web-devicons" }},
 }, opts)
 

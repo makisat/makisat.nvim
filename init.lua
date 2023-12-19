@@ -11,7 +11,10 @@ vim.api.nvim_set_keymap('n', '<leader><leader>r', '<cmd>source ~/.config/nvim/in
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 
+vim.keymap.set("n", "<leader>xx", function() require("trouble").toggle() end)
+
 -- Create an autocommand group
+
 vim.cmd("augroup MyGroup")
 -- Clear any existing autocommands in the group
 vim.cmd("autocmd!")

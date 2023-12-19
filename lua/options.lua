@@ -21,6 +21,7 @@ vim.cmd("set noexpandtab")
 -- vim.opt.clipboard = "unnamedplus"
 
 vim.opt.termguicolors = true
+vim.g.airline_theme = "deus"
 
 function check_filetype()
 	local filetype = vim.bo.filetype

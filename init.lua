@@ -2,7 +2,6 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.g.netrw_findcmd = 'fd'
-
 vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>Explore<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-s>', '<cmd>vsp<CR><c-w><c-w><cmd>Explore<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>bw<CR>', { noremap = true, silent = true })
@@ -12,6 +11,8 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 
 vim.keymap.set("n", "<leader>xx", function() require("trouble").toggle() end)
+
+vim.keymap.set("v", "<C-y>", '"*y')
 
 -- Create an autocommand group
 
@@ -23,9 +24,17 @@ vim.cmd("autocmd BufEnter * lua check_filetype()")
 -- End the group
 vim.cmd("augroup END")
 
+-- move line command
+-- vim.keymap.set({ "n", "v" }, "<C-:")
 
--- toggleterm
+vim.keymap.set("n", "<M-p>", "ddkP==")
+vim.keymap.set("n", "<M-n>", "ddp==")
+
+vim.keymap.set("v", "<M-p>", "dkP`[V`]=`[V`]")
+vim.keymap.set("v", "<M-n>", "dp`[V`]=`[V`]")
+
 -- vim.api.nvim_set_keymap('t', '<esc>', '<c-\\><c-n>', { noremap = true, silent = true })
+-- toggleterm
 
 require("lazy_init")
 
@@ -47,4 +56,5 @@ require("plugins.treesitter")
 require("plugins.toggleterm")
 require("plugins.telescope")
 require("plugins.surround")
+require("plugins.vim-go")
 

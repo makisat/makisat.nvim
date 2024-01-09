@@ -23,6 +23,10 @@ vim.cmd("set noexpandtab")
 vim.opt.termguicolors = true
 vim.g.airline_theme = "deus"
 
+-- netrw
+-- vim.g.netrw_banner = 0
+-- vim.g.netrw_liststyle = 3
+
 function check_filetype()
 	local filetype = vim.bo.filetype
 	if filetype == "typescriptreact" or filetype == "javascriptreact" then

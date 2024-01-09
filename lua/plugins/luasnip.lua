@@ -28,7 +28,7 @@ ls.add_snippets("lua", {
 ls.add_snippets("rust", {
 	s("pl", {
 		t('println!("'), i(1, 'text'), t('");'),
-	})
+	}),
 })
 
 ls.add_snippets("typescript", {
@@ -44,6 +44,19 @@ ls.add_snippets("c", {
 
 	s("for", {
 		t('for (int i = 0; i < '), i(1, 'len'), t({';  i++) {', '	'}), i(2, "content"), t({"", "}"})
+	})
+})
+
+ls.add_snippets("go", {
+	s("init", {
+		t({'package main', '', 'import (', '	'}),
+		i(1, 'imports'),
+		t({'', ')', '', 'func main() {', '	'}),
+		i(2, 'main'),
+		t({'', '}'}),
+	}),
+	s("pl", {
+		t('fmt.Println("'), i(1, 'text'), t('")'),
 	})
 })
 

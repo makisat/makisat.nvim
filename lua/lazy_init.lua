@@ -72,5 +72,12 @@ require("lazy").setup({
 	{ "kylechui/nvim-surround", version = "*", event = "VeryLazy" },
 	{ "vim-airline/vim-airline", dependencies = { "vim-airline/vim-airline-themes" } },
 	{ "folke/trouble.nvim", dependencies = { "nvim-tree/nvim-web-devicons" }},
+	{
+		'windwp/nvim-autopairs',
+		event = "InsertEnter",
+		opts = {} -- this is equalent to setup({}) function
+	},
+	-- go integration
+	"fatih/vim-go",
 }, opts)
 

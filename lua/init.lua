@@ -49,6 +49,9 @@ require("lazy").setup({
             },
         },
     },
+    {
+        'akinsho/toggleterm.nvim', version = "*", config = true
+    },
     -- lsp
     {
         "neovim/nvim-lspconfig",
@@ -102,6 +105,7 @@ require("plugins/luasnip")
 require("plugins/nvim-cmp")
 require("plugins/lualine")
 require("plugins/lspconfig")
+require("plugins/toggleterm")
 
 -- configs
 require("options")

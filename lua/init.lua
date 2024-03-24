@@ -18,6 +18,12 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     -- colorscheme
     { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true },
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+    },
     -- treesitter
     {
         "nvim-treesitter/nvim-treesitter",

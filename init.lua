@@ -70,94 +70,101 @@ require("lazy").setup({
 
     -- Autoformat
     -- {
-    --     'stevearc/conform.nvim',
-    --     lazy = false,
-    --     keys = require("plugins.conform").keys,
-    --     opts = require("plugins.conform").opts
-    -- },
+        --     'stevearc/conform.nvim',
+        --     lazy = false,
+        --     keys = require("plugins.conform").keys,
+        --     opts = require("plugins.conform").opts
+        -- },
 
-    -- Autocompletion
-    {
-        'hrsh7th/nvim-cmp',
-        event = 'InsertEnter',
-        dependencies = {
-            {
-                'L3MON4D3/LuaSnip',
-                build = (function()
-                    if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
-                        return
-                    end
-                    return 'make install_jsregexp'
-                end)(),
-                dependencies = {
-                    {
-                        -- snippets
-                        'rafamadriz/friendly-snippets',
-                        config = function()
-                            require('luasnip.loaders.from_vscode').lazy_load()
-                        end,
+        -- Autocompletion
+        {
+            'hrsh7th/nvim-cmp',
+            event = 'InsertEnter',
+            dependencies = {
+                {
+                    'L3MON4D3/LuaSnip',
+                    build = (function()
+                        if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
+                            return
+                        end
+                        return 'make install_jsregexp'
+                    end)(),
+                    dependencies = {
+                        {
+                            -- snippets
+                            'rafamadriz/friendly-snippets',
+                            config = function()
+                                require('luasnip.loaders.from_vscode').lazy_load()
+                            end,
+                        },
                     },
                 },
+
+                'saadparwaiz1/cmp_luasnip',
+                'hrsh7th/cmp-nvim-lsp',
+                'hrsh7th/cmp-path',
             },
-
-            'saadparwaiz1/cmp_luasnip',
-            'hrsh7th/cmp-nvim-lsp',
-            'hrsh7th/cmp-path',
         },
-    },
 
-    -- colorscheme
-    { 'folke/tokyonight.nvim', priority = 1000, opts = {} },
+        -- colorscheme
+        { 'folke/tokyonight.nvim', priority = 1000, opts = {} },
 
-    -- surround
-    {
-        "kylechui/nvim-surround",
-        version = "*",
-        event = "VeryLazy",
-        opts = {},
-    },
-
-    -- status line
-    { 'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' }, opts = {} },
-
-    -- treesitter
-    {
-        'nvim-treesitter/nvim-treesitter',
-        build = ':TSUpdate',
-        opts = require("plugins/treesitter").opts,
-        config = require("plugins/treesitter").func,
-    },
-
-    -- auto pairs
-    {
-        'windwp/nvim-autopairs',
-        event = "InsertEnter",
-        config = true,
-    }
-}, {
-    ui = {
-        icons = vim.g.have_nerd_font and {} or {
-            cmd = '⌘',
-            config = '🛠',
-            event = '📅',
-            ft = '📂',
-            init = '⚙',
-            keys = '🗝',
-            plugin = '🔌',
-            runtime = '💻',
-            require = '🌙',
-            source = '📄',
-            start = '🚀',
-            task = '📌',
-            lazy = '💤 ',
+        -- surround
+        {
+            "kylechui/nvim-surround",
+            version = "*",
+            event = "VeryLazy",
+            opts = {},
         },
-    }
-})
+
+        -- status line
+        { 'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' }, opts = {} },
+
+        -- treesitter
+        {
+            'nvim-treesitter/nvim-treesitter',
+            build = ':TSUpdate',
+            opts = require("plugins/treesitter").opts,
+            config = require("plugins/treesitter").func,
+        },
+
+        -- auto pairs
+        {
+            'windwp/nvim-autopairs',
+            event = "InsertEnter",
+            config = true,
+        },
+        { "github/copilot.vim" },
+    }, {
+        ui = {
+            icons = vim.g.have_nerd_font and {} or {
+                cmd = '⌘',
+                config = '🛠',
+                event = '📅',
+                ft = '📂',
+                init = '⚙',
+                keys = '🗝',
+                plugin = '🔌',
+                runtime = '💻',
+                require = '🌙',
+                source = '📄',
+                start = '🚀',
+                task = '📌',
+                lazy = '💤 ',
+            },
+        }
+    })
 
 
-require("plugins.telescope")
-require("plugins.lsp")
-require("plugins.cmp")
-require("plugins.colorscheme")
-require("plugins.autopairs")
-require("plugins.snippets")
+    require("plugins.telescope")
+    require("plugins.lsp")
+    require("plugins.cmp")
+    require("plugins.colorscheme")
+    require("plugins.autopairs")
+    require("plugins.snippets")
+
+    -- tab settings
+    vim.opt.tabstop = 4
+    vim.opt.softtabstop = 4
+    vim.opt.shiftwidth = 4
+    vim.opt.expandtab = true

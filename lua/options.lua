@@ -9,6 +9,9 @@ vim.g.have_nerd_font = false
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+-- block cursor
+vim.opt.guicursor = "n-v-c-sm:block"
+
 -- enable mouse
 vim.opt.mouse = 'a'
 

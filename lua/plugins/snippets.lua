@@ -12,7 +12,11 @@ ls.add_snippets("rust", {
 ls.add_snippets("typescript", {
     s("fn", {
         t("function "), i(1, "name"), t("("), i(2, "arguments"), t("): "), i(3, "return"), t({" {", "	"}), i(4, "content"), t({"", "}"})
-    })
+    }),
+
+    s("prln", {
+        t('console.log('), i(1, 'text'), t(')'),
+    }),
 })
 
 ls.add_snippets("c", {

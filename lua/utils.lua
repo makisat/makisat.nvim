@@ -13,3 +13,6 @@ set("n", "<M-n>", "ddp==", { desc = "Move the line down" })
 set("v", "<M-p>", "dkP`[V`]=`[V`]", { desc = "Move the block of line up" })
 set("v", "<M-n>", "dp`[V`]=`[V`]", { desc = "Move the block of line down" })
 
+
+vim.cmd('command! Q q')
+vim.cmd('command! W w')

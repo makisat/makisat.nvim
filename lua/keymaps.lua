@@ -1,7 +1,7 @@
 local set = vim.keymap.set
 
 -- navigation
-set('n', '<leader>e', '<cmd>E<cr>')
+set('n', '<leader>.', '<cmd>Ex<cr>')
 set({ 'n', 'i' }, '<C-s>', '<cmd>vsp<cr><C-W><C-W><cmd>E<cr>')
 set("n", "<C-u>", "<C-u>zz")
 set("n", "<C-d>", "<C-d>zz")

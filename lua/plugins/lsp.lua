@@ -74,6 +74,7 @@ local servers = {
     pyright = {},
     rust_analyzer = {},
     tsserver = {},
+    zls = {},
     -- :help lspconfig-all for more
 
     lua_ls = {

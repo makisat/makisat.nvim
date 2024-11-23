@@ -50,6 +50,13 @@ require("lazy").setup({
             },
         },
     },
+    -- harpoon
+    {
+        'ThePrimeagen/harpoon',
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+        },
+    },
     -- lsp
     {
         "neovim/nvim-lspconfig",
@@ -103,6 +110,7 @@ require("plugins/luasnip")
 require("plugins/nvim-cmp")
 require("plugins/lualine")
 require("plugins/lspconfig")
+require("plugins/harpoon")
 
 -- configs
 require("options")

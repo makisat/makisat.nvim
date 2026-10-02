@@ -4,6 +4,23 @@ return {
         lazy = false,
         priority = 1000,
         config = function()
+            local transparent = {
+                "Normal", "NormalNC", "NormalFloat", "FloatBorder", "SignColumn",
+                "LineNr", "CursorLineNr", "EndOfBuffer", "FoldColumn", "StatusLine",
+                "StatusLineNC", "WinSeparator", "Pmenu", "TabLine", "TabLineFill",
+                "MsgArea", "GitSignsAdd", "GitSignsChange", "GitSignsDelete",
+            }
+            vim.api.nvim_create_autocmd("ColorScheme", {
+                group = vim.api.nvim_create_augroup("TransparentBg", { clear = true }),
+                callback = function()
+                    for _, group in ipairs(transparent) do
+                        local hl = vim.api.nvim_get_hl(0, { name = group, link = false })
+                        hl.bg = nil
+                        hl.ctermbg = nil
+                        vim.api.nvim_set_hl(0, group, hl)
+                    end
+                end,
+            })
             vim.cmd.colorscheme("base16-tomorrow-night")
         end,
     },
